@@ -23,6 +23,9 @@ func _ready():
 		ball.set_physics_process(false)
 		ball.velocity_dir = Vector2.ZERO 
 	
+	# 🎯 게임이 시작하기 전에 미리 화면의 ScoreLabel을 초기화해 둡니다.
+	_update_in_game_score_label()
+	
 	if game_start_ui:
 		if game_start_ui.has_signal("countdown_done"):
 			if not game_start_ui.countdown_done.is_connected(_on_countdown_finished):
@@ -37,8 +40,19 @@ func _on_countdown_finished():
 	stage = 1 
 	score = 0
 	is_waiting_for_paddle = false
+	
+	# 🎯 카운트다운 완료 후 진짜 게임 판이 열릴 때 1단계로 새로고침
+	_update_in_game_score_label()
+	
 	spawn_bricks()
 	start_ball()
+
+# 🎯 [새로 추가] 현재 메인 게임 화면에 배치된 ScoreLabel을 실시간으로 변경해주는 함수
+func _update_in_game_score_label():
+	# game_over_ui 내부가 아니라, 평소에 화면 상단에 떠 있는 ScoreLabel을 찾아갑니다.
+	var in_game_score_label = get_node_or_null("ScoreLabel")
+	if in_game_score_label:
+		in_game_score_label.text = str(stage) + "단계"
 
 func start_ball():
 	if ball:
@@ -101,15 +115,17 @@ func on_ball_hit_paddle():
 func next_stage():
 	stage += 1 
 	print("현재 단계 상승: ", stage)
+	
+	# 🎯 다음 스테이지 벽돌이 깔리는 순간 상단 라벨도 "X단계"로 업데이트!
+	_update_in_game_score_label()
+	
 	spawn_bricks()
-
-# 여기서부터 맨 밑바닥 끝까지 덮어씌우시면 됩니다!
 
 func _on_death_zone_body_entered(body):
 	if body.name == "Ball" or body.is_in_group("ball"):
-		game_over() # 👈 이제 아래에 이 함수가 생기므로 에러가 사라집니다!
+		game_over()
 
-# ⭕ [복구 완료] 화면 중앙 정렬 기능이 완벽히 내장된 game_over 함수
+# ⭕ [중앙정렬 제거 유지] 에디터에 배치한 라벨 위치를 그대로 사용하는 game_over 함수
 func game_over():
 	if ball:
 		ball.set_process(false)
@@ -119,31 +135,22 @@ func game_over():
 		var complete_stage = stage - 1
 		if complete_stage < 0: complete_stage = 0
 		
-		# 1. 야바위와 에러가 안 나도록 정수 점수를 먼저 안전하게 보냅니다.
+		# 1. 안전하게 기본 display 함수 호출
 		var title_msg = "GAME OVER"
 		game_over_ui.display(title_msg, score, false)
 		
-		# 2. ScoreLabel을 직접 찾아갑니다.
+		# 2. ScoreLabel을 찾아 결과창 텍스트 내용만 업데이트합니다.
 		var score_label = game_over_ui.get_node_or_null("ScoreLabel")
 		
 		if score_label:
-			# 🎯 [핵심 추가] 이 UI가 현재 '구슬 게임'에 의해 켜졌음을 증명하는 태그를 붙입니다!
+			# 이 UI가 현재 '구슬 게임'에 의해 켜졌음을 증명하는 태그 지정
 			game_over_ui.set_meta("game_type", "marble")
 			
-			# 3. 구슬 게임 전용 문구로 변경하고 중앙 정렬합니다.
+			# 구슬 게임 전용 문구로 텍스트 내용만 업데이트
 			var final_msg = str(complete_stage) + "단계 완료"
 			if complete_stage <= 0:
 				final_msg = "0단계 완료"
 			score_label.text = final_msg
-			
-			if "horizontal_alignment" in score_label:
-				score_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-				
-			if "anchor_left" in score_label:
-				score_label.anchor_left = 0.0
-				score_label.anchor_right = 1.0
-				score_label.offset_left = 0
-				score_label.offset_right = 0
 
 func _exit_tree():
 	DisplayServer.screen_set_orientation(4)

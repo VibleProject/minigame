@@ -104,4 +104,14 @@ shape = SubResource("RectangleShape2D_g28bt")
 
 [node name="GameStartUI" parent="." unique_id=955049924 instance=ExtResource("8_wn3il")]
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=739805201]
+modulate = Color(0, 0, 0, 1)
+offset_left = 17.158962
+offset_top = 1.7926353
+offset_right = 57.158962
+offset_bottom = 24.792635
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "X단계"
+
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

@@ -20,8 +20,10 @@ script = ExtResource("1_7vrkn")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1599738038]
 layout_mode = 0
-offset_right = 1254.0
-offset_bottom = 1883.4171
+offset_left = 1401.9633
+offset_top = 79.10041
+offset_right = 2655.9634
+offset_bottom = 1962.5176
 scale = Vector2(0.91697806, 0.5154343)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=106912382]
@@ -41,19 +43,18 @@ scale = Vector2(0.4644461, 0.71314484)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1267267254]
 layout_mode = 0
-offset_left = 1200.6556
-offset_top = 43.145683
-offset_right = 1820.6556
-offset_bottom = 1305.1456
 alignment = 1
 
 [node name="DinoGame" type="Button" parent="." unique_id=661689836]
-custom_minimum_size = Vector2(350, 100)
-layout_mode = 0
-offset_left = 158.17021
-offset_top = 208.53746
-offset_right = 778.1702
-offset_bottom = 626.5375
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22966632
+anchor_top = 0.17977367
+anchor_right = 0.71535593
+anchor_bottom = 0.47202197
+offset_top = 122.24608
+offset_right = 169.30347
+offset_bottom = -123.10144
 scale = Vector2(0.56402665, 0.8949229)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
@@ -63,58 +64,58 @@ text = "
 icon = ExtResource("2_glbon")
 flat = true
 
-[node name="Background" type="TextureRect" parent="DinoGame" unique_id=139351619]
+[node name="Background2" type="TextureRect" parent="DinoGame" unique_id=139351619]
 layout_mode = 0
-offset_left = 127.46835
-offset_top = 168.74065
-offset_right = 545.95593
-offset_bottom = 309.04456
-scale = Vector2(0.91697806, 0.5154343)
+offset_left = 55.767426
+offset_top = 26.952759
+offset_right = 812.1759
+offset_bottom = 167.25662
+scale = Vector2(0.5329377, 0.46247143)
 texture = ExtResource("3_nlkkf")
 
 [node name="BallGame" type="Button" parent="." unique_id=1969990880]
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 0
 offset_left = 165.35976
-offset_top = 352.35638
-offset_right = 781.35974
-offset_bottom = 770.3564
+offset_top = 488.9844
+offset_right = 680.35974
+offset_bottom = 613.9844
 scale = Vector2(0.56402665, 0.8949229)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("2_glbon")
 flat = true
 
-[node name="Background" type="TextureRect" parent="BallGame" unique_id=1000312635]
+[node name="Background3" type="TextureRect" parent="BallGame" unique_id=1000312635]
 z_index = 9
 layout_mode = 0
-offset_left = 121.094894
-offset_top = 173.76263
-offset_right = 539.5825
-offset_bottom = 314.06653
-scale = Vector2(0.91697806, 0.5154343)
+offset_left = 52.580566
+offset_top = 26.114624
+offset_right = 822.00415
+offset_bottom = 166.41852
+scale = Vector2(0.51771057, 0.4555825)
 texture = ExtResource("4_qe12f")
 
 [node name="YabawiGame" type="Button" parent="." unique_id=1254365527]
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 0
-offset_left = 165.35977
-offset_top = 488.9844
-offset_right = 781.35974
-offset_bottom = 906.9844
+offset_left = 164.46104
+offset_top = 618.4216
+offset_right = 679.46106
+offset_bottom = 743.4216
 scale = Vector2(0.56402665, 0.8949229)
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 icon = ExtResource("2_glbon")
 flat = true
 
-[node name="Background" type="TextureRect" parent="YabawiGame" unique_id=1596411378]
+[node name="Background4" type="TextureRect" parent="YabawiGame" unique_id=1596411378]
 layout_mode = 0
-offset_left = 92.41449
-offset_top = 173.76257
-offset_right = 565.0457
-offset_bottom = 314.06647
-scale = Vector2(0.91697806, 0.5154343)
+offset_left = 20.713531
+offset_top = 29.127563
+offset_right = 865.5404
+offset_bottom = 169.43146
+scale = Vector2(0.5412859, 0.46948418)
 texture = ExtResource("5_8qtwp")
 
 [connection signal="pressed" from="DinoGame" to="." method="_on_dino_game_pressed"]

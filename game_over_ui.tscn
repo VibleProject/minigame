@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfct15kaw8qwa"]
 
 [ext_resource type="Script" uid="uid://ri0urfecy2gd" path="res://game_over_ui.gd" id="1_ji7mg"]
-[ext_resource type="Texture2D" uid="uid://dupasn342y0pd" path="res://image-removebg-preview (22).png" id="2_4fpvo"]
+[ext_resource type="Texture2D" uid="uid://by8035q861txj" path="res://Adobe Express - file.png" id="2_4fpvo"]
 [ext_resource type="Texture2D" uid="uid://dnhfxblcxrtsf" path="res://image-removebg-preview (21).png" id="3_t4yam"]
 [ext_resource type="Texture2D" uid="uid://biy2nmunee5yq" path="res://image-removebg-preview (20).png" id="4_f3aqa"]
 
@@ -18,25 +18,24 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="." unique_id=1409624410]
 offset_left = 40.0
-offset_top = 336.0
+offset_top = 422.00003
 offset_right = 734.41754
-offset_bottom = 568.81335
+offset_bottom = 654.81335
 scale = Vector2(0.91697806, 0.5154343)
 texture = ExtResource("2_4fpvo")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1416326972]
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -360.0
-offset_top = -173.0
-offset_right = 248.65527
-offset_bottom = -75.0
+offset_left = -68.00001
+offset_top = -95.0
+offset_right = -68.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.1829357, 1.0517775)
+scale = Vector2(1.1829357, 1.058973)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
 text = "점수 : 0"
@@ -50,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.00002
-offset_top = -61.5
+offset_top = 24.5
 offset_right = 80.0
-offset_bottom = 15.5
+offset_bottom = 101.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.2610945, 1.1468484)
@@ -67,10 +66,10 @@ anchor_left = 0.53300005
 anchor_top = 0.5
 anchor_right = 0.53300005
 anchor_bottom = 0.5
-offset_left = -144.76003
-offset_top = 22.500061
+offset_left = -144.76004
+offset_top = 108.5
 offset_right = 75.23996
-offset_bottom = 99.50006
+offset_bottom = 185.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.0854384, 1.0631716)

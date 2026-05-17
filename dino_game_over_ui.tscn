@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://sx733f0mqw05"]
 
 [ext_resource type="Script" uid="uid://dlqvvsfv214wu" path="res://dino_game_over_ui.gd" id="1_og5y7"]
+[ext_resource type="Texture2D" uid="uid://dupasn342y0pd" path="res://image-removebg-preview (22).png" id="2_rr71s"]
+[ext_resource type="Texture2D" uid="uid://dnhfxblcxrtsf" path="res://image-removebg-preview (21).png" id="3_636su"]
+[ext_resource type="Texture2D" uid="uid://biy2nmunee5yq" path="res://image-removebg-preview (20).png" id="4_u3w2d"]
+[ext_resource type="Texture2D" uid="uid://by8035q861txj" path="res://Adobe Express - file.png" id="5_636su"]
 
 [node name="DinoGameOverUI" type="CanvasLayer" unique_id=1380782551]
 script = ExtResource("1_og5y7")
@@ -14,45 +18,62 @@ scale = Vector2(32.054207, 18.009264)
 color = Color(0.22745098, 0.22745098, 0.22745098, 0.49411765)
 metadata/_edit_use_anchors_ = true
 
-[node name="GameOverLabel" type="Label" parent="." unique_id=1004409878]
-offset_left = 288.0
-offset_top = 128.0
-offset_right = 849.9175
-offset_bottom = 265.00003
-scale = Vector2(1.2386161, 1.1653134)
-theme_override_font_sizes/font_size = 97
-text = "GAME OVER"
-horizontal_alignment = 1
-
 [node name="ScoreLabel" type="Label" parent="." unique_id=1724173707]
-offset_left = 498.00006
-offset_top = 291.0
-offset_right = 733.0001
-offset_bottom = 389.0
+offset_left = -6.1035156e-05
+offset_top = 263.99997
+offset_right = 1082.0537
+offset_bottom = 361.99997
 scale = Vector2(1.1829357, 1.0517775)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70
 text = "점수 : 0"
 horizontal_alignment = 1
 
 [node name="RetryButton" type="Button" parent="." unique_id=396631369]
 process_mode = 3
-offset_left = 504.99997
-offset_top = 390.00012
-offset_right = 713.0
-offset_bottom = 467.00012
+offset_left = 500.99997
+offset_top = 378.00012
+offset_right = 721.0
+offset_bottom = 455.00012
 scale = Vector2(1.2610945, 1.1468484)
 theme_override_font_sizes/font_size = 50
-text = "다시하기"
+icon = ExtResource("3_636su")
+flat = true
 
 [node name="MenuButton" type="Button" parent="." unique_id=658627378]
 process_mode = 3
-offset_left = 524.0
-offset_top = 486.00018
-offset_right = 732.0
-offset_bottom = 563.0002
+offset_left = 522.00006
+offset_top = 475.0
+offset_right = 742.00006
+offset_bottom = 552.0
 scale = Vector2(1.0854384, 1.0631716)
 theme_override_font_sizes/font_size = 50
-text = "메뉴화면"
+icon = ExtResource("4_u3w2d")
+flat = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=121226921]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -507.0
+offset_right = 654.4175
+offset_bottom = -274.18665
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("2_rr71s")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=1688629204]
+offset_left = 320.0
+offset_top = 136.00002
+offset_right = 1014.41754
+offset_bottom = 368.81335
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("5_636su")
 
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

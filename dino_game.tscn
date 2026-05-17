@@ -59,4 +59,14 @@ wait_time = 1.5
 
 [node name="DinoGameOverUI" parent="." unique_id=1380782551 instance=ExtResource("6_h5n6i")]
 
+[node name="ScoreLabel" type="Label" parent="." unique_id=1310387749]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_right = 89.0
+offset_bottom = 47.0
+scale = Vector2(0.9729529, 1.2915968)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 34
+text = "X단계"
+
 [connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]
