@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://sx733f0mqw05"]
+
+[ext_resource type="Script" uid="uid://dlqvvsfv214wu" path="res://dino_game_over_ui.gd" id="1_og5y7"]
+
+[node name="DinoGameOverUI" type="CanvasLayer" unique_id=1380782551]
+script = ExtResource("1_og5y7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1319174425]
+offset_top = 720.00006
+offset_right = 22.461952
+offset_bottom = 791.0746
+rotation = -1.571074
+scale = Vector2(32.054207, 18.009264)
+color = Color(0.22745098, 0.22745098, 0.22745098, 0.49411765)
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverLabel" type="Label" parent="." unique_id=1004409878]
+offset_left = 288.0
+offset_top = 128.0
+offset_right = 849.9175
+offset_bottom = 265.00003
+scale = Vector2(1.2386161, 1.1653134)
+theme_override_font_sizes/font_size = 97
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1724173707]
+offset_left = 498.00006
+offset_top = 291.0
+offset_right = 733.0001
+offset_bottom = 389.0
+scale = Vector2(1.1829357, 1.0517775)
+theme_override_font_sizes/font_size = 70
+text = "점수 : 0"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=396631369]
+process_mode = 3
+offset_left = 504.99997
+offset_top = 390.00012
+offset_right = 713.0
+offset_bottom = 467.00012
+scale = Vector2(1.2610945, 1.1468484)
+theme_override_font_sizes/font_size = 50
+text = "다시하기"
+
+[node name="MenuButton" type="Button" parent="." unique_id=658627378]
+process_mode = 3
+offset_left = 524.0
+offset_top = 486.00018
+offset_right = 732.0
+offset_bottom = 563.0002
+scale = Vector2(1.0854384, 1.0631716)
+theme_override_font_sizes/font_size = 50
+text = "메뉴화면"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

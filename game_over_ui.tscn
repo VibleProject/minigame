@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dfct15kaw8qwa"]
+
+[ext_resource type="Script" uid="uid://ri0urfecy2gd" path="res://game_over_ui.gd" id="1_ji7mg"]
+[ext_resource type="Texture2D" uid="uid://dupasn342y0pd" path="res://image-removebg-preview (22).png" id="2_4fpvo"]
+[ext_resource type="Texture2D" uid="uid://dnhfxblcxrtsf" path="res://image-removebg-preview (21).png" id="3_t4yam"]
+[ext_resource type="Texture2D" uid="uid://biy2nmunee5yq" path="res://image-removebg-preview (20).png" id="4_f3aqa"]
+
+[node name="GameOverUI" type="CanvasLayer" unique_id=257722852]
+process_mode = 3
+script = ExtResource("1_ji7mg")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1675347065]
+offset_right = 22.461952
+offset_bottom = 71.07454
+scale = Vector2(32.054207, 18.009264)
+color = Color(0.22745098, 0.22745098, 0.22745098, 0.49411765)
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="." unique_id=1409624410]
+offset_left = 40.0
+offset_top = 336.0
+offset_right = 734.41754
+offset_bottom = 568.81335
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("2_4fpvo")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1416326972]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -173.0
+offset_right = 248.65527
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1829357, 1.0517775)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "점수 : 0"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="." unique_id=1972204211]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.00002
+offset_top = -61.5
+offset_right = 80.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2610945, 1.1468484)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("3_t4yam")
+flat = true
+
+[node name="MenuButton" type="Button" parent="." unique_id=1433686279]
+process_mode = 3
+anchors_preset = -1
+anchor_left = 0.53300005
+anchor_top = 0.5
+anchor_right = 0.53300005
+anchor_bottom = 0.5
+offset_left = -144.76003
+offset_top = 22.500061
+offset_right = 75.23996
+offset_bottom = 99.50006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0854384, 1.0631716)
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("4_f3aqa")
+flat = true
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

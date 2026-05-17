@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://pm2gt5refktj"]
+
+[ext_resource type="Script" uid="uid://bdvxh7867eqih" path="res://obstacle.gd" id="1_aubd6"]
+[ext_resource type="Texture2D" uid="uid://cn6goycxx082i" path="res://image-removebg-preview (11).png" id="2_aubd6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tyhon"]
+radius = 9.699452
+
+[node name="Obstacle" type="Area2D" unique_id=1534515290]
+process_mode = 1
+position = Vector2(16, 8)
+scale = Vector2(0.83304113, 0.79779994)
+script = ExtResource("1_aubd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2135576466]
+position = Vector2(8.20481e-06, 130.3585)
+scale = Vector2(-0.93542963, 1.5061749)
+texture = ExtResource("2_aubd6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=220893045]
+position = Vector2(-0.087301634, 133.68771)
+rotation = 3.1415927
+scale = Vector2(-7.235688, 8.37397)
+shape = SubResource("CircleShape2D_tyhon")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

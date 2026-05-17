@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://dn4n326r1olgy"]
+
+[ext_resource type="Script" uid="uid://bewo7jy3kaf0i" path="res://ball_game.gd" id="1_j51ss"]
+[ext_resource type="Script" uid="uid://byeij0i1rqwo" path="res://paddle.gd" id="2_ohoin"]
+[ext_resource type="Texture2D" uid="uid://dihad4emagw1a" path="res://Gemini_Generated_Image_h7pplgh7pplgh7pp.png" id="2_wn3il"]
+[ext_resource type="Texture2D" uid="uid://dfkn3e0wdrn4m" path="res://image-removebg-preview (15).png" id="4_wn3il"]
+[ext_resource type="Script" uid="uid://b3unii7evxro2" path="res://ball.gd" id="4_ytew1"]
+[ext_resource type="Texture2D" uid="uid://caiol4yi3jxe6" path="res://KakaoTalk_20260514_134330070.png" id="6_wn3il"]
+[ext_resource type="PackedScene" uid="uid://dfct15kaw8qwa" path="res://game_over_ui.tscn" id="7_j51ss"]
+[ext_resource type="PackedScene" uid="uid://crg6s0568v5ly" path="res://game_start_ui.tscn" id="8_wn3il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7ggf"]
+size = Vector2(321.23456, 53.527752)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wn3il"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j51ss"]
+size = Vector2(122, 1365.134)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wn3il"]
+size = Vector2(138, 1358.6304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2gs"]
+size = Vector2(1226, 146)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g28bt"]
+size = Vector2(1314, 90)
+
+[node name="BallGame" type="Node2D" unique_id=617644]
+scale = Vector2(1.0210607, 1.0461864)
+script = ExtResource("1_j51ss")
+metadata/_edit_horizontal_guides_ = [0.0]
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1563931072]
+offset_right = 1024.0
+offset_bottom = 682.0
+scale = Vector2(0.4589448, 0.4445715)
+texture = ExtResource("2_wn3il")
+metadata/_edit_use_anchors_ = true
+
+[node name="Paddle" type="AnimatableBody2D" parent="." unique_id=302026410 groups=["paddle"]]
+self_modulate = Color(0.8039216, 0.8784314, 0.95686275, 1)
+script = ExtResource("2_ohoin")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle" unique_id=1072281394]
+position = Vector2(1.9841766, 7.648903)
+rotation = -3.1410592
+scale = Vector2(0.5721341, -0.679514)
+texture = ExtResource("4_wn3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle" unique_id=1526069755]
+position = Vector2(0.9793854, 3.0517578e-05)
+scale = Vector2(0.8434377, 0.8434377)
+shape = SubResource("RectangleShape2D_u7ggf")
+debug_color = Color(1, 1, 1, 0)
+
+[node name="Ball" type="CharacterBody2D" parent="." unique_id=1267863143]
+z_index = 2
+motion_mode = 1
+script = ExtResource("4_ytew1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball" unique_id=1945635258]
+position = Vector2(-193.91592, 239.8635)
+scale = Vector2(0.07992065, 0.08034828)
+texture = ExtResource("6_wn3il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=137477404]
+position = Vector2(-193.5898, 236.99088)
+rotation = 0.16093792
+scale = Vector2(2.6472578, 2.6472578)
+shape = SubResource("CircleShape2D_wn3il")
+
+[node name="BrickParent" type="Node2D" parent="." unique_id=2086327814]
+
+[node name="Walls" type="Node2D" parent="." unique_id=2059020194]
+position = Vector2(0, 1)
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=151265276]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=132613003]
+position = Vector2(-62.679916, 679.567)
+shape = SubResource("RectangleShape2D_j51ss")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=349933851]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=542778788]
+position = Vector2(775.66394, 664.2734)
+shape = SubResource("RectangleShape2D_wn3il")
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=414038057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=463949960]
+position = Vector2(571.95416, -74.600655)
+shape = SubResource("RectangleShape2D_qi2gs")
+
+[node name="DeathZone" type="Area2D" parent="." unique_id=1597813336]
+position = Vector2(-112, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone" unique_id=989661413]
+position = Vector2(472.40952, 1112.5706)
+shape = SubResource("RectangleShape2D_g28bt")
+
+[node name="GameOverUI" parent="." unique_id=257722852 instance=ExtResource("7_j51ss")]
+
+[node name="GameStartUI" parent="." unique_id=955049924 instance=ExtResource("8_wn3il")]
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]

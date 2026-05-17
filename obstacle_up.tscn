@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dkeap3magy7wt"]
+
+[ext_resource type="Script" uid="uid://dbixsfdbjquoo" path="res://obstacle_up.gd" id="1_nw3kw"]
+[ext_resource type="Texture2D" uid="uid://5lmffwendfjc" path="res://image-removebg-preview (16).png" id="2_nw3kw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vubgd"]
+
+[node name="ObstacleUp" type="Area2D" unique_id=1279422006]
+script = ExtResource("1_nw3kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1536738485]
+position = Vector2(7.6293945e-06, 8.799759)
+rotation = 1.5585676
+scale = Vector2(-0.3778414, 0.41678727)
+texture = ExtResource("2_nw3kw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1454945385]
+position = Vector2(-5.087311, 12.128967)
+rotation = 3.1415927
+scale = Vector2(-6.7846293, -6.400846)
+shape = SubResource("RectangleShape2D_vubgd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

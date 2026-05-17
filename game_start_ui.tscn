@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://crg6s0568v5ly"]
+
+[ext_resource type="Script" uid="uid://dm0iluy6l26du" path="res://game_start_ui.gd" id="1_afmjp"]
+
+[node name="GameStartUI" type="CanvasLayer" unique_id=955049924]
+script = ExtResource("1_afmjp")
+
+[node name="Label" type="Label" parent="." unique_id=1248805582]
+offset_left = 83.00002
+offset_top = 525.0
+offset_right = 644.9175
+offset_bottom = 662.0
+scale = Vector2(1.2386161, 1.1653134)
+theme_override_font_sizes/font_size = 97
+text = "3"
+horizontal_alignment = 1

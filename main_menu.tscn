@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bgg22fvoshlbw"]
+
+[ext_resource type="Script" uid="uid://2nxko0q88w5l" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dfkn3e0wdrn4m" path="res://image-removebg-preview (15).png" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://b6jl4btu17sk0" path="res://image-removebg-preview (18).png" id="3_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://fucqixgleicy" path="res://image-removebg-preview (17).png" id="4_qe12f"]
+[ext_resource type="Texture2D" uid="uid://budsmslmoa48l" path="res://image-removebg-preview (19).png" id="5_8qtwp"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=1550456024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.1127254, 1.11251)
+script = ExtResource("1_7vrkn")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1599738038]
+layout_mode = 0
+offset_right = 1254.0
+offset_bottom = 1883.4171
+scale = Vector2(0.91697806, 0.5154343)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=106912382]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4644461, 0.71314484)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1267267254]
+layout_mode = 0
+offset_left = 1200.6556
+offset_top = 43.145683
+offset_right = 1820.6556
+offset_bottom = 1305.1456
+alignment = 1
+
+[node name="DinoGame" type="Button" parent="." unique_id=661689836]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 0
+offset_left = 158.17021
+offset_top = 208.53746
+offset_right = 778.1702
+offset_bottom = 626.5375
+scale = Vector2(0.56402665, 0.8949229)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+theme_override_icons/icon = SubResource("ViewportTexture_06t4h")
+text = "
+"
+icon = ExtResource("2_glbon")
+flat = true
+
+[node name="Background" type="TextureRect" parent="DinoGame" unique_id=139351619]
+layout_mode = 0
+offset_left = 127.46835
+offset_top = 168.74065
+offset_right = 545.95593
+offset_bottom = 309.04456
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("3_nlkkf")
+
+[node name="BallGame" type="Button" parent="." unique_id=1969990880]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 0
+offset_left = 165.35976
+offset_top = 352.35638
+offset_right = 781.35974
+offset_bottom = 770.3564
+scale = Vector2(0.56402665, 0.8949229)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("2_glbon")
+flat = true
+
+[node name="Background" type="TextureRect" parent="BallGame" unique_id=1000312635]
+z_index = 9
+layout_mode = 0
+offset_left = 121.094894
+offset_top = 173.76263
+offset_right = 539.5825
+offset_bottom = 314.06653
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("4_qe12f")
+
+[node name="YabawiGame" type="Button" parent="." unique_id=1254365527]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 0
+offset_left = 165.35977
+offset_top = 488.9844
+offset_right = 781.35974
+offset_bottom = 906.9844
+scale = Vector2(0.56402665, 0.8949229)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+icon = ExtResource("2_glbon")
+flat = true
+
+[node name="Background" type="TextureRect" parent="YabawiGame" unique_id=1596411378]
+layout_mode = 0
+offset_left = 92.41449
+offset_top = 173.76257
+offset_right = 565.0457
+offset_bottom = 314.06647
+scale = Vector2(0.91697806, 0.5154343)
+texture = ExtResource("5_8qtwp")
+
+[connection signal="pressed" from="DinoGame" to="." method="_on_dino_game_pressed"]
+[connection signal="pressed" from="BallGame" to="." method="_on_ball_game_pressed"]
+[connection signal="pressed" from="YabawiGame" to="." method="_on_yabawi_game_pressed"]

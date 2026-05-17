@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dqjjjibqif1hf"]
+
+[ext_resource type="Script" uid="uid://bri8driuxkcu7" path="res://dino_game.gd" id="1_0aii4"]
+[ext_resource type="Texture2D" uid="uid://odrrrsa1ydv3" path="res://image (1).png" id="1_yd26y"]
+[ext_resource type="Script" uid="uid://d1n203xs6x2he" path="res://player.gd" id="2_f5lig"]
+[ext_resource type="Texture2D" uid="uid://8q1io0xnuonf" path="res://egg.png" id="3_0aii4"]
+[ext_resource type="PackedScene" uid="uid://bytr54lokaheo" path="res://dino_game_start_ui.tscn" id="6_2dp0k"]
+[ext_resource type="PackedScene" uid="uid://sx733f0mqw05" path="res://dino_game_over_ui.tscn" id="6_h5n6i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5lig"]
+size = Vector2(1.948328, 27.206633)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iu68"]
+size = Vector2(54.72272, 20)
+
+[node name="DinoGame" type="Node2D" unique_id=964602584]
+scale = Vector2(1.2273892, 0.7900045)
+script = ExtResource("1_0aii4")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1488334731]
+offset_right = 1024.0
+offset_bottom = 682.0
+scale = Vector2(1.0181229, 1.3353429)
+texture = ExtResource("1_yd26y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1224886232]
+scale = Vector2(0.905084, 1.4070095)
+script = ExtResource("2_f5lig")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1107058699]
+position = Vector2(107, 515)
+texture = ExtResource("3_0aii4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1502963110]
+position = Vector2(104.00001, 515.2916)
+scale = Vector2(62.595695, -5.7470264)
+shape = SubResource("RectangleShape2D_f5lig")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1934263069]
+scale = Vector2(0.905084, 1.4070095)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1768107177]
+position = Vector2(600, 564.00006)
+scale = Vector2(22.36, 5.8)
+shape = SubResource("RectangleShape2D_5iu68")
+debug_color = Color(0.9254902, 0.8627451, 0.6901961, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Floor" unique_id=1729570340]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="ObstacleTimer" type="Timer" parent="." unique_id=1895454419]
+wait_time = 1.5
+
+[node name="DinoGameStartUI" parent="." unique_id=1660748397 instance=ExtResource("6_2dp0k")]
+
+[node name="DinoGameOverUI" parent="." unique_id=1380782551 instance=ExtResource("6_h5n6i")]
+
+[connection signal="timeout" from="ObstacleTimer" to="." method="_on_obstacle_timer_timeout"]

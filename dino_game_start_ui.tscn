@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bytr54lokaheo"]
+
+[ext_resource type="Script" uid="uid://84beldqqcsp1" path="res://dino_game_start_ui.gd" id="1_vdwvd"]
+
+[node name="DinoGameStartUI" type="CanvasLayer" unique_id=1660748397]
+visible = false
+script = ExtResource("1_vdwvd")
+
+[node name="Label" type="Label" parent="." unique_id=55638633]
+offset_top = 231.00002
+offset_right = 669.4568
+offset_bottom = 373.14813
+scale = Vector2(1.9090104, 1.8572181)
+theme_override_font_sizes/font_size = 97
+text = "3"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=768404733]
+offset_top = 720.0
+offset_right = 22.461952
+offset_bottom = 791.0745
+rotation = -1.571074
+scale = Vector2(32.054207, 18.009264)
+color = Color(0.22745098, 0.22745098, 0.22745098, 0.49411765)
+metadata/_edit_use_anchors_ = true

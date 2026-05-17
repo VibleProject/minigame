@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://d4hxufet5rg5s"]
+
+[ext_resource type="Script" uid="uid://bkqi5o5nwdsfq" path="res://yabawi_game.gd" id="1_vgsep"]
+[ext_resource type="Texture2D" uid="uid://dihad4emagw1a" path="res://Gemini_Generated_Image_h7pplgh7pplgh7pp.png" id="2_dl47f"]
+[ext_resource type="PackedScene" uid="uid://dvrqtd57mo6mk" path="res://cup.tscn" id="3_qyjdj"]
+[ext_resource type="PackedScene" uid="uid://dfct15kaw8qwa" path="res://game_over_ui.tscn" id="4_dl47f"]
+[ext_resource type="Texture2D" uid="uid://bne351fk3j34u" path="res://image-removebg-preview.png" id="4_qyjdj"]
+[ext_resource type="PackedScene" uid="uid://crg6s0568v5ly" path="res://game_start_ui.tscn" id="6_1togr"]
+
+[node name="YabawiGame" type="Node2D" unique_id=676650214]
+position = Vector2(-18.999998, 1)
+scale = Vector2(1.1072929, 1.1156758)
+script = ExtResource("1_vgsep")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1404056417]
+z_index = -1
+offset_left = 17.240677
+offset_top = 1.4459915
+offset_right = 1553.2407
+offset_bottom = 2753.446
+scale = Vector2(0.42349988, 0.4172059)
+mouse_filter = 2
+texture = ExtResource("2_dl47f")
+metadata/_edit_use_anchors_ = true
+
+[node name="CupParent" type="Area2D" parent="." unique_id=1394784628]
+position = Vector2(-40.63966, -91.42441)
+scale = Vector2(1.0985181, 1.0931027)
+
+[node name="cup" parent="CupParent" unique_id=1584156526 instance=ExtResource("3_qyjdj")]
+z_index = 2
+position = Vector2(173.641, 635.80536)
+scale = Vector2(0.7423052, 0.6370291)
+
+[node name="cup2" parent="CupParent" unique_id=329788711 instance=ExtResource("3_qyjdj")]
+z_index = 2
+position = Vector2(535.3931, 635.80536)
+scale = Vector2(0.74230516, 0.6370292)
+
+[node name="cup3" parent="CupParent" unique_id=1322141811 instance=ExtResource("3_qyjdj")]
+z_index = 2
+position = Vector2(354.51706, 635.80536)
+scale = Vector2(0.7423052, 0.6370292)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1831616232]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1325939782]
+position = Vector2(342.76013, 577.76105)
+
+[node name="GameOverUI" parent="." unique_id=257722852 instance=ExtResource("4_dl47f")]
+
+[node name="Ball" type="Sprite2D" parent="." unique_id=918463297]
+z_index = 1
+position = Vector2(349.50104, 644.4524)
+scale = Vector2(0.27686316, 0.2706298)
+texture = ExtResource("4_qyjdj")
+
+[node name="GameStartUI" parent="." unique_id=955049924 instance=ExtResource("6_1togr")]
+visible = false
